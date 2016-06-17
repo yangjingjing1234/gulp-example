@@ -19,3 +19,26 @@ webpack 思想就是让所有css  img js 当成模块被加载，但是在node�
 
 如果不用webpac 编译模块，那么在react中是不能用 import "css/index.css" 这种模式写的，因此在react 代码中最好就直接写es6
 语法，对于公共的库在页面中引入好了.
+
+入坑4::
+有些东西看会了，可是只要一写就会出错下边就是一个例子：
+gulp.task("es6:compile",function(){
+    return gulp.src(PATH.jsPath+"**/*.es6")
+		//.pipe(changed(PATH.jsPath+"**/*.es6"))
+		.pipe(plumber({errorHandler:notify.onError("ES6 Error:<%=error.message %>")}))
+		.pipe(babel({"presets":[es2015]}))
+		.pipe(gulp.dest(PATH.distJsPath))
+		.pipe(selfNotify({title:"ES6 to js and minify",message:"ES6 package task complete."}));
+});
+gulp.task("es6:compile",function(){
+    return gulp.src(PATH.jsPath+"jsx/*.es6")
+		//.pipe(changed(PATH.jsPath+"**/*.es6"))
+		.pipe(plumber({errorHandler:notify.onError("ES6 Error:<%=error.message %>")}))
+		.pipe(babel({"presets":[es2015]}))
+		.pipe(gulp.dest(PATH.distJsPath))
+		.pipe(selfNotify({title:"ES6 to js and minify",message:"ES6 package task complete."}));
+});
+
+2者唯一的区别就是入口路径那里；其他都是一模一样，但是生成路径却改变了,入口路径不同生成路径也改变了
+第一个生成路径为PATH.distJsPath+"**/*.js"
+第一个生成路径为PATH.distJsPath+"*.js"
