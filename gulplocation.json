@@ -1,0 +1,22 @@
+{
+  "path": {
+    "rootPath": "D:/work/ajaxloading/",
+    "imagePath": "D:/work/ajaxloading/images/",
+    "jsPath": "D:/work/ajaxloading/js/",
+    "cssPath": "D:/work/ajaxloading/css/",
+    "htmlPath": "D:/work/ajaxloading/",
+
+    "buildJsPath": "D:/work/ajaxloading/build/js/",
+    "buildCssPath": "D:/work/ajaxloading/build/css/",
+    "buildImagePath": "D:/work/ajaxloading/build/images/",
+    "buildRootPath": "D:/work/ajaxloading/build/",
+
+    "distJsPath": "D:/work/ajaxloading/dist/js/",
+    "distCssPath": "D:/work/ajaxloading/dist/css/",
+    "distImagePath": "D:/work/ajaxloading/dist/images/",
+    "distRootPath": "D:/work/ajaxloading/dist/"
+  },
+  "server": {
+    "port": 8080
+  }
+}
