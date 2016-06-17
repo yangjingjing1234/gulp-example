@@ -1,5 +1,9 @@
 # gulp-example
 
+
+这是一个本地的gulp 编译小例子 很好用
+
+
 入坑1::
 
 webpack = require("webpack-stream"),  这个是gulp-stream 更改之后的用在gulp中的
