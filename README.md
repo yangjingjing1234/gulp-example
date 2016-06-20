@@ -56,6 +56,8 @@ gulp.task("es6:compile",function(){
        },
        ....
  webpack entry 如果多个配置这里是花括弧{}，如果是一个配置，可以用数组[],但是一旦乱用就会出错
+ 
+ 
  入坑6：：
  
  package.json文件里面严格遵守json书写格式，紧跟着最后花括弧的那个数据后面不能有逗号，否则也会报错！
