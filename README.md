@@ -42,3 +42,21 @@ gulp.task("es6:compile",function(){
 2者唯一的区别就是入口路径那里；其他都是一模一样，但是生成路径却改变了,入口路径不同生成路径也改变了
 第一个生成路径为PATH.distJsPath+"**/*.js"
 第一个生成路径为PATH.distJsPath+"*.js"
+
+
+入坑5：：
+.pipe(webpack({
+	entry:{
+		lib:["react","react-dom","jquery"],
+		main:PATH.compileJsPath+"active.js",
+	},
+	output:{
+                path:PATH.distJsPath,
+                filename:"[name].js",
+       },
+       ....
+ webpack entry 如果多个配置这里是花括弧{}，如果是一个配置，可以用数组[],但是一旦乱用就会出错
+ 入坑6：：
+ 
+ package.json文件里面严格遵守json书写格式，紧跟着最后花括弧的那个数据后面不能有逗号，否则也会报错！
+ 
